@@ -1,0 +1,154 @@
+#separator:tab
+#html:true
+#guid column:1
+#tags column:4
+H%*=f4s%p%	What is the Cauchy Criterion?	"A sequence \( (a_n) \) is Cauchy if<br>\[\forall \varepsilon &gt; 0,\ \exists N \in \mathbb{N}
+\text{ such that }
+m,n \ge N \Rightarrow |a_n-a_m|&lt;\varepsilon.\]<br>In \( \mathbb{R} \)&nbsp;(if the numbers in the sequence are all real), a sequence converges iff it is Cauchy.&nbsp;<br><br>NOTE:<br>- The criterion makes no mention of a limit. Therefore, it can be used to show that a sequence is convergent WITHOUT needing to know the limit<br>- In English, the criterion says that after some point \(N\) in the sequence, any two terms of the sequence (not necessarily consecutive) are arbitrarily close together. i.e. their distance is less than any given \(\varepsilon&gt;0\)<br>"	defn sequences week1
+w{w=P{s8%v	What can the Cauchy Criterion be used to prove?	The Cauchy Criterion can be used to prove that a real sequence is convergent (without needing to know its limit)	sequences week1
+P5KNwyxUTj	Prove that the sequence&nbsp;\(a_n=\frac{1}{n}\)&nbsp;is convergent (EXAMPLE PROOF)	"We need to prove:<br><br>\[\forall \varepsilon&gt;0,\ \exists N\in\mathbb{N}
+\text{ such that }
+m,n\ge N \Rightarrow \left|\frac1n-\frac1m\right|&lt;\varepsilon.\]<br><br>Scratch work:<br><br>We want<br><br>\[\left|\frac1n-\frac1m\right|&lt;\varepsilon.\]<br><br>Using the triangle inequality,<br><br>\[\left|\frac1n-\frac1m\right|
+\le \left|\frac1n\right|+\left|\frac1m\right|
+= \frac1n+\frac1m.\]<br><br>So it is enough to make<br><br>\[\frac1n+\frac1m&lt;\varepsilon.\]<br><br>A good way to guarantee this is to make each term less than half of \(\varepsilon\)&nbsp;because then their sum will be less than&nbsp;\(\varepsilon\):<br><br>\[\frac1n&lt;\frac{\varepsilon}{2}
+\quad\text{and}\quad
+\frac1m&lt;\frac{\varepsilon}{2}.\]<br><br>Solving these inequalities:<br><br>\[\frac1n&lt;\frac{\varepsilon}{2}
+\Rightarrow n&gt;\frac{2}{\varepsilon},\]<br><br>and<br><br>\[\frac1m&lt;\frac{\varepsilon}{2}
+\Rightarrow m&gt;\frac{2}{\varepsilon}.\]<br><br>So choose<br><br>\[N&gt;\frac{2}{\varepsilon}.\]<br><br>Proof:<br><br>Let \(\varepsilon&gt;0\). Choose \(N\in\mathbb{N}\) such that<br><br>\[N&gt;\frac{2}{\varepsilon}.\]<br><br>Suppose \(m,n\ge N\). Then<br><br>\[n\ge N&gt;\frac{2}{\varepsilon}
+\quad\text{and}\quad
+m\ge N&gt;\frac{2}{\varepsilon}.\]<br><br>So<br><br>\[\frac1n&lt;\frac{\varepsilon}{2}
+\quad\text{and}\quad
+\frac1m&lt;\frac{\varepsilon}{2}.\]<br><br>Therefore, using the triangle inequality,<br><br><br>\[\left|\frac1n-\frac1m\right|
+\le \left|\frac1n\right|+\left|\frac1m\right|
+= \frac1n+\frac1m
+&lt; \frac{\varepsilon}{2}+\frac{\varepsilon}{2}
+= \varepsilon.\]<br><br>Hence \(\left(\frac1n\right)\) is Cauchy, and so it is convergent"	proof_example sequences week1
+qG!hUgA{>X	What is the general proof strategy for proving a real sequence is convergent using the Cauchy Criterion?	"To prove a real sequence \((a_n)\) is convergent using the Cauchy Criterion, prove that it is Cauchy.<br><br>We need to show:<br>\[\forall \varepsilon&gt;0,\ \exists N\in\mathbb{N}
+\text{ such that }
+m,n\ge N \Rightarrow |a_n-a_m|&lt;\varepsilon.\]<br>General strategy:<br><br>1. Start with:<br>\[|a_n-a_m|\]<br>2. Use algebra and inequalities to bound it by something simpler<br><br>Often use the triangle inequality:<br>\[|a_n-a_m|
+\le |a_n|+|a_m|.\]<br>3. Try to make the final bound less than \(\varepsilon\).<br><br>If the bound splits into two parts, make each part less than \(\frac{\varepsilon}{2}\)<br><br>4. Use this scratch work to choose a suitable \(N\).<br><br>5. Write the formal proof:<br><br>Let \(\varepsilon&gt;0\). Choose \(N\) large enough so that the desired inequalities hold. Then for \(m,n\ge N\), prove<br>\[|a_n-a_m|&lt;\varepsilon.\]<br>Therefore \((a_n)\) is Cauchy.<br><br>Since every Cauchy sequence in \(\mathbb{R}\) converges, \((a_n)\) is convergent."	proof_scheme sequences week1
+GD4K:UF7yW	What is the triangle inequality?	"The triangle inequality says:<br><br>\[|x+y| \le |x|+|y|.\]<br><br>Geometrically, its like saying that, to get from point A to point B, it will always be faster to go straight from A to B rather than go to an intermediate point first<br><br>Useful form:<br><br>\[|a-b| \le |a|+|b|.\]<br>This comes from writing:<br><br>\[a-b = a+(-b).\]<br>So:<br><br>\[|a-b|
+= |a+(-b)|
+\le |a|+|-b|
+= |a|+|b|.\]<br>"	defn week1
+IMj$T6FLV3	What is a sequence of functions?	A sequence of functions is essentially a list of functions<br>\[f_1,\ f_2,\ f_3,\dots\]<br>usually written as<br>\[(f_n).\]<br>Each \(f_n\) is a function.<br><br>For example:<br>\[f_n(x)=x^n\]<br>defines a sequence of functions:<br>\[f_1(x)=x,\quad f_2(x)=x^2,\quad f_3(x)=x^3,\dots\]<br>So instead of a sequence of numbers, we have a sequence of functions. <br><br>NOTE:<br>If we fix/pick a value of \(x\) and evaluate each function at that value, we obtain a sequence of numbers:<br><br>\[f_1(x),\ f_2(x),\ f_3(x),\dots\]<br>For example,, if we had the sequence of functions<br>\[f_n(x)=\frac{x}{n}\]<br>and fixed x = 1, we would get the sequence of&nbsp;<i>numbers</i>&nbsp;<br>\[(a_n) = \frac{1}{n}\]<br>	defn sequences week1
+g5B?-eG@l6	What does it mean for a sequence of functions \((f_n)\) to be pointwise Cauchy?	"A sequence of functions \((f_n)\) is pointwise Cauchy if, for every fixed \(x\), the sequence of numbers<br>\[(f_n(x))\]<br>is Cauchy.&nbsp;<br><br>Formally, that means:<br><br>\[\forall x,\ \forall \varepsilon&gt;0,\ \exists N\in\mathbb{N}
+\text{ such that }
+m,n\ge N \Rightarrow |f_n(x)-f_m(x)|&lt;\varepsilon.\]<br><br>Important:<br>The \(N\) is allowed to depend on \(x\).<br><br>In words:<br>Fix an arbitrary input \(x\). Then look at the numbers<br><br>\[f_1(x), f_2(x), f_3(x), \dots\]<br><br>If this number sequence is Cauchy for every \(x\), then \((f_n)\) is pointwise Cauchy"	defn pointwise week1
+zB[M:4Qbfm	Show that the sequence of functions<br><br>\[f_n(x)=2x+\frac{\sin(nx)}{n}\]<br><br>is pointwise Cauchy on \([0,\infty)\)&nbsp;(EXAMPLE PROOF)	"We need to show that for every fixed \(x\),<br>\[(f_n(x))\]<br>is a Cauchy sequence<br><br>Let \(x\in[0,\infty)\) and let \(\varepsilon&gt;0\)<br><br>Scratch work:<br><br>We want<br>\[|f_n(x)-f_m(x)|&lt;\varepsilon.\]<br>Compute:<br>\[|f_n(x)-f_m(x)|
+=
+\left|
+2x+\frac{\sin(nx)}{n}
+-
+\left(2x+\frac{\sin(mx)}{m}\right)
+\right|\]\[=
+\left|
+\frac{\sin(nx)}{n}
+-
+\frac{\sin(mx)}{m}
+\right|.\]<br>Using the triangle inequality:<br>\[\left|
+\frac{\sin(nx)}{n}
+-
+\frac{\sin(mx)}{m}
+\right|
+\le
+\left|
+\frac{\sin(nx)}{n}
+\right|
++
+\left|
+\frac{\sin(mx)}{m}
+\right|.\]<br>We cannot easily solve<br>\[\left|
+\frac{\sin(nx)}{n}
+-
+\frac{\sin(mx)}{m}
+\right|&lt;\varepsilon\]<br>directly, because it involves 'sin' terms and would lead to a transcendental inequality<br><br>So instead, we find an upper bound.<br>Since<br>\[\forall \theta, |\sin(\theta)|\le 1 \]<br>we get<br>\[\left|
+\frac{\sin(nx)}{n}
+\right|
+\le \frac1n,
+\quad
+\left|
+\frac{\sin(mx)}{m}
+\right|
+\le \frac1m.\]<br>So it is enough to make<br>\[\frac1n+\frac1m&lt;\varepsilon.\]<br>As usual, make each term less than \(\frac{\varepsilon}{2}\):<br>\[\frac1n&lt;\frac{\varepsilon}{2},
+\quad
+\frac1m&lt;\frac{\varepsilon}{2}.\]<br>This happens if<br>\[n&gt;\frac2\varepsilon,
+\quad
+m&gt;\frac2\varepsilon.\]<br>So choose<br>\[N&gt;\frac2\varepsilon.\]<br>Proof:<br><br>Let \(x\in[0,\infty)\) and let \(\varepsilon&gt;0\).<br><br>Choose \(N\in\mathbb N\) such that<br>\[N&gt;\frac2\varepsilon.\]Suppose \(m,n\ge N\). Since<br>\[N&gt;\frac{2}{\varepsilon},\]<br>we have<br>\[n\ge N&gt;\frac{2}{\varepsilon}
+\quad\text{and}\quad
+m\ge N&gt;\frac{2}{\varepsilon}.\]<br>Therefore<br>\[\frac1n&lt;\frac{\varepsilon}{2}
+\quad\text{and}\quad
+\frac1m&lt;\frac{\varepsilon}{2}.\]and so<br>\[\begin{aligned}
+|f_n(x)-f_m(x)|
+&amp;=
+\left|
+\frac{\sin(nx)}{n}
+-
+\frac{\sin(mx)}{m}
+\right| \\
+&amp;\le
+\left|
+\frac{\sin(nx)}{n}
+\right|
++
+\left|
+\frac{\sin(mx)}{m}
+\right| \; \text{ (Triangular Inequality)} \\
+&amp;\le
+\frac1n+\frac1m \; \text{ (Upper bound)} \\
+&amp;&lt;
+\frac{\varepsilon}{2}
++
+\frac{\varepsilon}{2} \\
+&amp;=
+\varepsilon.
+\end{aligned}\]<br><br>Hence \((f_n)\) is pointwise Cauchy.<br>"	pointwise proof_example week1
+rl$vit}%x5	What is the general proof strategy for showing that a sequence of functions \((f_n)\) is pointwise Cauchy?	"We need to show:<br>\[\forall x,\ \forall \varepsilon&gt;0,\ \exists N\in\mathbb{N}
+\text{ such that }
+m,n\ge N \Rightarrow |f_n(x)-f_m(x)|&lt;\varepsilon.\]<br>Proof scheme:<br>1. Fix an arbitrary \(x\).<br>2. Let \(\varepsilon&gt;0\).<br>3. Look at<br><br>\[|f_n(x)-f_m(x)|.\]<br><br>4. Simplify the expression if possible (e.g. using the Triangular Inequality)<br><br>5. If the expression is hard to solve directly, find an upper bound.<br><br>Common tools:<br>Triangle inequality:<br>\[|a+b|\le |a|+|b|\]<br>Bounded trig functions:<br>\[|\sin x|\le 1,\quad |\cos x|\le 1\]<br>If \(m,n\ge N\), then:<br>\[\frac1n\le \frac1N,
+\quad
+\frac1m\le \frac1N\]<br>Split epsilon:<br>\[\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon\]<br>Use known bounds (for step 6), e.g.<br><br>\[|f_n(x)-f_m(x)|\le g(n,m,x),\]<br>where \(g(n,m,x)\to 0\) as \(m,n\to\infty\) for each fixed \(x\)<br><br>For example, if \(x\) is in a bounded interval, say \(x\in[0,1]\), then<br>\[0\le x\le 1.\]<br>So<br>\[\frac{x}{n}+\frac{x}{m}
+\le
+\frac1n+\frac1m.\]<br>In this case, your \(g(n,m,x)\) is<br>\[g(n,m,x)=\frac{x}{n}+\frac{x}{m}.\]<br>Since \(x\in[0,1]\),<br>\[g(n,m,x)
+\le
+\frac1n+\frac1m.\]<br>6. Try to find an upper bound<br>\[|f_n(x)-f_m(x)|\le g(n,m,x),\]<br>where \(g(n,m,x)\to 0\) as \(m,n\to\infty\) for each fixed \(x\)<br><br>7. Choose \(N\) large enough so that when \(m,n\ge N\), the bound is less than \(\varepsilon\).<br><br>Often this means making two parts less than \(\frac{\varepsilon}{2}\), and seeing which value of \(N\) guarantees this<br><br>8. Conclude:<br>\[|f_n(x)-f_m(x)|&lt;\varepsilon.\]<br>Therefore \((f_n)\) is pointwise Cauchy.<br>"	pointwise proof_scheme week1
+B%~]3JZDHS	What does it mean for a sequence of functions \((f_n)\) to converge pointwise to \(f\)?	"Let \((f_n)\) be a sequence of functions defined on a interval&nbsp;\(A\)<br><br>We say that \((f_n)\) converges pointwise to \(f\) if, for every fixed \(x\in A\), the sequence of numbers<br>\[(f_n(x))\]<br>converges to \(f(x)\).<br><br>That means:<br>\[\forall x\in A,\ \forall \varepsilon&gt;0,\ \exists N\in\mathbb{N}
+\text{ such that }
+n\ge N \Rightarrow |f_n(x)-f(x)|&lt;\varepsilon.\]<br>Important:<br>The \(N\) is allowed to depend on \(x\).<br><br>In words:<br>Pick any input \(x\). If the outputs<br>\[f_1(x),\ f_2(x),\ f_3(x),\dots\]<br>converge to a number, then we define the limit function by<br>\[f(x)=\lim_{n\to\infty} f_n(x).\]<br>NOTE:<br>A sequence of functions \((f_n)\) converges at a specific point \(x\) if the sequence of numbers<br>\[(f_n(x))\]<br>converges.<br><br>A sequence of functions \((f_n)\) converges <i>pointwise </i>if it converges at <b>every </b>point \(x\) in the interval/domain, not just a specific one<br>"	defn pointwise sequences week1
+jHjH/r~k~,	Show that the sequence of functions<br>\[f_n(x)=\frac{x}{n}\]<br>converges pointwise on \([0,\infty)\), and find the limit function. (PROOF EXAMPLE)<br>	"We fix an arbitrary \(x\in[0,\infty)\).<br><br>We want to study the sequence of numbers<br>\[f_n(x)=\frac{x}{n}.\]<br>Since \(x\) is fixed, it behaves like a constant.<br><br>As \(n\to\infty\), the denominator becomes larger and larger, while the numerator stays constant. So the fraction gets closer and closer to \(0\).<br><br>Therefore, we expect the limit function to be<br>\[f(x)=0.\]<br>We now prove this formally.<br><br>Proof:<br><br>Fix an arbitrary \(x\in[0,\infty)\), and let \(\varepsilon&gt;0\).<br><br>We want<br>\[\left|\frac{x}{n}-0\right|&lt;\varepsilon.\]<br>Since \(x\ge0\), we can drop the absolute values:<br>\[\left|\frac{x}{n}\right|
+=
+\frac{x}{n}.\]<br>So we need<br>\[\frac{x}{n}&lt;\varepsilon.\]<br>Solving for \(n\):<br>\[n&gt;\frac{x}{\varepsilon}.\]<br>Choose<br>\[N&gt;\frac{x}{\varepsilon}.\]<br>Then for all \(n\ge N\),<br>\[n\ge N&gt;\frac{x}{\varepsilon}.\]<br>Therefore,<br>\[\frac{x}{n}&lt;\varepsilon.\]<br>Hence<br>\[\left|\frac{x}{n}-0\right|&lt;\varepsilon.\]<br>So<br>\[f_n(x)\to 0.\]<br>Since \(x\) was arbitrary, \((f_n)\) converges pointwise on \([0,\infty)\) to the limit function<br>\[f(x)=0.\]<br>"	pointwise proof_example sequences week1
+m&&sg,EkZO	What is the general proof strategy for proving pointwise convergence for a sequence of functions?	"To prove \((f_n)\) converges pointwise on an interval/domain \(A\):<br><br>1. Fix an arbitrary \(x\in A\).<br>2. Study the sequence of numbers<br>\[(f_n(x)).\]<br>3. Find its limit as \(n\to\infty\):<br>\[f(x)=\lim_{n\to\infty} f_n(x).\]<br>4. Since \(x\) was arbitrary, this gives the pointwise limit function \(f\).<br><br>5. If asked to prove it formally, show:<br>\[\forall x\in A,\ \forall \varepsilon&gt;0,\ \exists N\in\mathbb{N}
+\text{ such that }
+n\ge N \Rightarrow |f_n(x)-f(x)|&lt;\varepsilon.\]This formal part is very similar to a Cauchy proof<br>Often, you try to bound<br>\[|f_n(x)-f(x)|\]<br>by something simpler, then choose \(N\) so that the bound is less than \(\varepsilon\).<br><br>IMPORTANT:<br>- For pointwise convergence, the \(N\) is allowed to depend on the chosen \(x\). So after fixing \(x\), you may choose an \(N\) that depends on both \(x\) and \(\varepsilon\).<br>- If no limit seems to exist, then the sequence may not converge pointwise. To prove this, find some \(x\in A\) such that the number sequence<br>\[(f_n(x))\]<br>does not converge (need to prove the negation of the pointwise convergence statement)<br>"	pointwise proof_scheme sequences week1
+gHetdL:]{9	Prove that<br>\[f_n(x)=\frac{nx}{nx+1}\]<br>converges pointwise on \([0,1]\), and find the limit function (EXAMPLE PROOF)	"Fix an arbitrary \(x\in[0,1]\).<br><br>We study the sequence of numbers<br>\[f_n(x)=\frac{nx}{nx+1}.\]<br>Case 1: \(x=0\)<br>\[f_n(0)=0,\]<br>so<br>\[f_n(0)\to 0.\]<br>Case 2: \(0&lt;x\le 1\)<br><br>To find the limit, divide the numerator and denominator by the highest order term \(nx\):<br>\[\frac{nx}{nx+1}
+=
+\frac{\frac{nx}{nx}}{\frac{nx+1}{nx}}
+=
+\frac{1}{1+\frac{1}{nx}}.\]<br>Since \(x&gt;0\) is fixed,<br>\[\frac{1}{nx}\to 0\]<br>as \(n\to\infty\). Therefore,<br>\[f_n(x)
+=
+\frac{1}{1+\frac{1}{nx}}
+\to
+\frac{1}{1+0}
+=
+1.\]<br>Hence the limit function is<br>\[f(x)=
+\begin{cases}
+0, &amp; x=0,\\
+1, &amp; 0&lt;x\le 1.
+\end{cases}\]<br>So \((f_n)\) converges pointwise on \([0,1]\).<br><br>Formal proof (only necessary if specifically asked):<br><br>Fix an arbitrary \(x\in[0,1]\). Need to consider two cases (which correlate to the piecewise components of the supposed limit function)<br><br>Case 1: \(x=0\)<br>\[f_n(0)=0\]<br>for all \(n\), so clearly<br>\[f_n(0)\to 0.\](because we will have condition&nbsp;\(0&lt; \epsilon\) which is obviously true)<br><br>Case 2: \(0&lt;x\le 1\)<br>Let \(\varepsilon&gt;0\).<br><br>We want<br>\[\left|
+\frac{nx}{nx+1}-1
+\right|
+&lt;
+\varepsilon.\]<br>Simplify:<br>\[\left|
+\frac{nx-(nx+1)}{nx+1}
+\right|
+=
+\left|
+\frac{-1}{nx+1}
+\right|
+=
+\frac{1}{nx+1}.\]<br>So we need<br>\[\frac{1}{nx+1}&lt;\varepsilon.\]<br>Since<br>\[\frac{1}{nx+1}&lt;\frac{1}{nx},\]<br>it is enough to make<br>\[\frac{1}{nx}&lt;\varepsilon.\]<br>Solving for \(n\):<br>\[n&gt;\frac{1}{x\varepsilon}.\]<br>Choose<br>\[N&gt;\frac{1}{x\varepsilon}.\]<br>Then for all \(n\ge N\),<br>\[n\ge N&gt;\frac{1}{x\varepsilon}.\]<br>Therefore,<br>\[\frac{1}{nx}&lt;\varepsilon.\]<br>Hence,<br>\[\left|
+\frac{nx}{nx+1}-1
+\right|
+&lt;
+\varepsilon.\]<br>So<br>\[f_n(x)\to 1.\]<br>Since \(x\) was arbitrary, \((f_n)\) converges pointwise on \([0,1]\)"	pointwise proof_example sequences week1
